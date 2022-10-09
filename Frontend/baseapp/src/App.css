@@ -1,0 +1,11 @@
+.regestration-page{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+}
+.formBox{
+    box-shadow: 0px 0px 15px -5px black;
+
+}
