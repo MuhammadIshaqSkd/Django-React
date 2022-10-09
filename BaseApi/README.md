@@ -22,6 +22,6 @@ This is an api for backend of api.
 
 ## Before commit code
 
-1. pip freeze > requirement.txt
+1. pip freeze > requirements.txt
 
 
