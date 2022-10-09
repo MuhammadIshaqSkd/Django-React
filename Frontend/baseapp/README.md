@@ -1,8 +1,7 @@
-# Mereos Dashboard
+
 
 ## Description
-
-A LMS website which proctors assessments with AI empowered environment.
+This project can send data from form and saved on backend Django using apis.
 
 ## Running Scheme
 
