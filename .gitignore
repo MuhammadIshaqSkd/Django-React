@@ -127,3 +127,14 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+node_modules
+build/
+dev
+secrets.*.js
+package-lock.json
+yarn.lock
+yarn-error.log
+*.zip
+*.rar
+
+.ebextensions
