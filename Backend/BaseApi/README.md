@@ -7,7 +7,7 @@ This is an api for backend of api.
 1. pip install virtualenv
 2. virtualenv env
 3. env\scripts\activate
-4. pip install -r requirement.txt
+4. pip install -r requirements.txt
 5. python manage.py runserver
 
 ## Creating superuser
