@@ -1,6 +1,6 @@
 # Description
 
-This is an api for backend of dashboard.
+This is an api for backend of api.
 
 ## Running Scheme
 
