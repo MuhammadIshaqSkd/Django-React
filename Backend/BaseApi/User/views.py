@@ -8,8 +8,8 @@ import json
 
 class user_profile(APIView):
     def post(self, request):
-        data = request.data
-        print(data)
+        # data = request.data
+        # print(data)
         # return Response("Data is Save Successfully")
         # data = {**request.data, "age": json.dumps(request.data["age"])}
         serializer = ProfileSerializer(data=request.data)

@@ -8,6 +8,7 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import axios from "axios";
+import ConfirmModal from './ConfirmModal'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 class Entry extends Component {
@@ -25,12 +26,10 @@ class Entry extends Component {
     isChecked: true,
 
     errors: {},
+    modal:false
   };
 
-  // test() {
-  //   if (this.state.fname == "") {
-  //   }
-  // }
+
   acceptTerms = () => {
     this.setState({
       isChecked: !this.state.isChecked,
@@ -61,6 +60,10 @@ class Entry extends Component {
       errors.fNameLength = "First Name must be of length 2 or higher.";
       isValid = false;
     }
+    if (this.state.username.trim().length < 7) {
+      errors.username = "Username must be of length 7 or higher.";
+      isValid = false;
+    }
     if (this.state.lname.trim().length < 2) {
       errors.lNameLength = "Last Name must be of length 2 or higher.";
       isValid = false;
@@ -85,6 +88,25 @@ class Entry extends Component {
     const isValid = this.formValidation();
 
     if (isValid && this.state.isChecked) {
+
+      axios
+      .post("http://127.0.0.1:8000/user/profile/", {
+        username: this.state.username,
+        password: this.state.password,
+        email: this.state.email,
+        first_name: this.state.fname,
+        last_name: this.state.lname,
+        age: this.state.dob,
+
+       
+      })
+      .then(function (response) {
+        console.log(response);
+        window.location.href = "/Login";
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
       console.log(this.state.fname);
       console.log(this.state.lname);
       console.log(this.state.email);
@@ -95,35 +117,35 @@ class Entry extends Component {
     }
   };
 
-  handleFormSubmit = (e) => {
+  handleCancer = (e) => {
     
-
-    axios
-      .post("http://127.0.0.1:8000/user/profile/", {
-        username: this.state.username,
-        password: this.state.password,
-        email: this.state.email,
-        first_name: this.state.fname,
-        last_name: this.state.lname,
-        age: this.state.dob,
-      })
-      .then(function (response) {
-        console.log(response);
-        window.location.href = "/Login";
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    this.setState({modal:true});
       
   };
 
+
+  handlereset=()=>{
+    this.setState({fname:''})
+    this.setState({username:''})
+    this.setState({lname:''})
+    this.setState({dob:''})
+    this.setState({email:''})
+    this.setState({password:''})
+    this.setState({confirmpassword:''})
+  }
+
+  handlClose=()=>{
+    this.setState({modal:false})
+  }
+
   render() {
     return (
-      <div className="regestration-page ">
+      <div className="regestration-page position-relative z-index-n2">
         {/* <div className="max-width"> */}
-        <div className="formBox box jumbotron">
-          <Form onSubmit={this.submitFunc}>
-            <Row className="mb-3 ">
+        {this.state.modal &&  <ConfirmModal handleYes={ this.handlereset} handlClose={this.handlClose}/> }
+        <div className="formBox box jumbotron z-index-n1">
+          <Form onSubmit={this.submitFunc} className='z-index-n2'>
+            <Row className="mb-3 z-index-n1">
               <Col md={4} className="mb-3">
                 <Form.Label>Username</Form.Label>
                 <Form.Control
@@ -134,6 +156,7 @@ class Entry extends Component {
                   value={this.state.username}
                   onChange={this.onChange}
                 />
+                
               </Col>
               <Col md={4} className="mb-3">
                 <Form.Label>First Name</Form.Label>
@@ -160,7 +183,7 @@ class Entry extends Component {
               </Col>
             </Row>
 
-            <Row className="mb-3">
+            <Row className="mb-3 z-index-n2">
               <Col md={7} className="mb-3">
                 <Form.Label>Email</Form.Label>
                 <Form.Control
@@ -206,18 +229,30 @@ class Entry extends Component {
                 />
               </Col>
             </Row>
-
-
-         
-
-           
-
             <Button
               variant="primary"
               type="submit"
-              onClick={this.handleFormSubmit}
+             
             >
               Submit
+            </Button>
+
+            <Button
+              variant="danger"
+              className="ml-3"
+              onClick={this.handleCancer}
+             
+            >
+              Cancel
+            </Button>
+
+            <Button
+              variant="secondary"
+              className="ml-3"
+              onClick={this. handlereset}
+             
+            >
+              Reset
             </Button>
             <br></br>
             {Object.keys(this.state.errors).map((i) => {
@@ -227,9 +262,11 @@ class Entry extends Component {
                 </div>
               );
             })}
+          
           </Form>
+          
         </div>
-        {/* </div> */}
+      
       </div>
     );
   }

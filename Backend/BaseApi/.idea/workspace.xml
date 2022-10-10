@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="15e79de4-8b76-4765-b6cb-6c3f34d8aa2a" name="Changes" comment="" />
+    <list default="true" id="15e79de4-8b76-4765-b6cb-6c3f34d8aa2a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/baseapp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/baseapp/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/baseapp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/baseapp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/baseapp/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/baseapp/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/baseapp/src/pages/Entry.page.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/baseapp/src/pages/Entry.page.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,10 +21,14 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2FtIyZYWA3TnJqZUQDL67OQzGyy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -26,7 +37,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Civil Trackers/BaseApi/User&quot;
+    &quot;last_opened_file_path&quot;: &quot;E:/Civil Trackers/Backend/BaseApi&quot;
   }
 }</component>
   <component name="RecentsManager">
